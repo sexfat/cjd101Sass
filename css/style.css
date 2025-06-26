@@ -78,4 +78,8 @@ body {
 .layout {
   width: 1200px;
   margin: auto;
+}
+
+.error {
+  color: red;
 }/*# sourceMappingURL=style.css.map */

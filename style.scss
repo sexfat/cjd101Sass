@@ -80,45 +80,54 @@ $be : height;
 
 .wrapper {
     width: 100%;
-        header {
+
+    header {
         width: 1200px;
         margin: auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: #e0e0e0;
+
         .logo {
-          width: 60px;
-          height: 40px;
-          background-color: #0095ff;
+            width: 60px;
+            height: 40px;
+            background-color: #0095ff;
         }
+
         nav {
             ul {
                 display: flex;
                 list-style: none;
                 padding: 0;
                 margin: 0;
+
                 li {
                     width: 80px;
                     padding: 10px;
                     text-align: center;
                     background-color: #a4a4a4;
+
                     a {
-                      color: blueviolet;
-                      display: block;
-                      text-decoration: none;
-                      &:hover {
-                         color :  blue
-                      } //偽元素
-                      &::before {
-                        content: '';
-                      } 
+                        color: blueviolet;
+                        display: block;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: blue
+                        }
+
+                        //偽元素
+                        &::before {
+                            content: '';
+                        }
                     }
+
                     // a:hover {
                     //     color :blue 
                     // }   
                 }
-                
+
             }
 
         }
@@ -131,12 +140,12 @@ $be : height;
 //運算 (單位 / 小數點)
 
 .el {
- width: 10 + 10px;
- height: 10px - 20px;
- margin:  10px * 10;
- font : ceil(20 / 16) + px; // 無條件進位
-//  font : round(20 / 16) + px;四捨五入
-//  font : floor(20 / 16) + px; //無條件捨去
+    width: 10 + 10px;
+    height: 10px - 20px;
+    margin: 10px * 10;
+    font: ceil(20 / 16) + px; // 無條件進位
+    //  font : round(20 / 16) + px;四捨五入
+    //  font : floor(20 / 16) + px; //無條件捨去
 }
 
 //判斷式
@@ -145,11 +154,36 @@ $be : height;
 $w : 1200px;
 
 .layout {
- @if $w == full {
-    width: 100%;
- }@else {
-    width: $w;
-    margin: auto;
- }
+    @if $w==full {
+        width: 100%;
+    }
+
+    @else {
+        width: $w;
+        margin: auto;
+    }
 }
 
+
+
+
+//function 
+$basiccolor : error;
+
+
+    @if $basiccolor=='primary' {
+        .primary {
+            color: #003cff
+        }
+    }
+
+    @else if $basiccolor=='secondary' {
+        .secondary {
+            color: #ff6f00
+        }
+
+    }@else if $basiccolor=='error' {
+            .error {
+                color: red;
+            }
+        }
