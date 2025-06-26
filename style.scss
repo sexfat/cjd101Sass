@@ -39,3 +39,12 @@ body {
 .content {
  // font-size: $a; // 這取不到區域變數
 }
+
+$b : 300px;
+$b : 400px !default; //預設值
+
+
+.b {
+  width: $b;
+}
+
