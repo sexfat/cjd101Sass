@@ -29,17 +29,19 @@ body {
    }
 
 }
+
+//區域變數 vs全域變數
 .wrapper {
   $a : 20px;  //  區域變數
   background-color: map-get($themeStyle, lightenColor) ; //map範例
   font-size: $a;
 }
 
-
 .content {
  // font-size: $a; // 這取不到區域變數
 }
 
+//權重
 $b : 300px;
 $b : 400px !default; //預設值
 
@@ -48,3 +50,25 @@ $b : 400px !default; //預設值
   width: $b;
 }
 
+// 變數轉型
+
+$class : a;
+
+// class
+.#{$class} {
+ width: $b;
+}
+
+// url
+
+$imgUrl : banner ;
+.img {
+   background-image: url('img/#{$imgUrl}.jpg');
+}
+
+// 屬性
+$be : height ; 
+
+.box {
+  #{$be} : 100px
+}

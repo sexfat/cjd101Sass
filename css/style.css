@@ -14,4 +14,16 @@ body {
 
 .b {
   width: 300px;
+}
+
+.a {
+  width: 300px;
+}
+
+.img {
+  background-image: url("img/banner.jpg");
+}
+
+.box {
+  height: 100px;
 }/*# sourceMappingURL=style.css.map */
