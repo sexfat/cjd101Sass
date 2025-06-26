@@ -227,16 +227,20 @@ $class : a;
   align-items: center;
 }
 
+// 物件
 .box-basic {
  @include rect(300px, 200px);
  background-color: #59f6d7;
 }
 
+//物件本身置中
 .box-lg {
     @include center(400px);
     background-color: #eaff00;
 }
 
+
+//外容器針對內物件 置中
 .section01 {
    @include center-flex();
 }
