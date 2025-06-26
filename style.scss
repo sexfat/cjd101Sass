@@ -1,0 +1,31 @@
+/*css*/
+// sass 註解
+// 變數
+$fontSize : 16px;// 數值
+$fontFamily : 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; //字串
+$color : #333; //顏色
+$spacing : 10px 20px;// list
+$dark : false; // 布林值
+
+$themeStyle : (
+  defaultColor : #eee ,  
+  darkColor : #333,
+  lightenColor : #fff
+); //map
+
+
+
+body {
+   font-size: $fontSize;
+   color: $color;
+   line-height: 1.4;
+   font-family: $fontFamily;
+   margin: $spacing;
+   @if $dark {
+       background-color:#333 ;
+   }
+
+}
+.wrapper {
+  background-color: map-get($themeStyle, lightenColor) ; //map範例
+}
