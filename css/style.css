@@ -80,6 +80,21 @@ body {
   margin: auto;
 }
 
-.error {
-  color: red;
+.primary {
+  color: #003cff;
+}
+
+.rect {
+  width: 100px;
+  height: 100px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
 }/*# sourceMappingURL=style.css.map */
