@@ -30,5 +30,12 @@ body {
 
 }
 .wrapper {
+  $a : 20px;  //  區域變數
   background-color: map-get($themeStyle, lightenColor) ; //map範例
+  font-size: $a;
+}
+
+
+.content {
+ // font-size: $a; // 這取不到區域變數
 }
