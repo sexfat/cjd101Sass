@@ -4,6 +4,7 @@
 @import 'sass/setting/var';
 @import 'sass/setting/font';
 @import 'sass/setting/color';
+@import 'sass/setting/border_radius';
 
 //function
 @import 'sass/mixin/mixin';
@@ -204,11 +205,7 @@ $class : a;
     @include name()
 }
 
-// 變數值
-@mixin rect($w, $h:null) {
-    width: $w;
-    height: $h
-}
+
 
 // 變數
 .box {
@@ -216,19 +213,7 @@ $class : a;
 }
 
 
-//置中
-@mixin center($w, $h:100px) {
-    margin: auto;
-    width: $w;
-    height: $h;
-}
 
-// flex置中
-@mixin center-flex() {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 // 物件
 .box-basic {
@@ -239,6 +224,9 @@ $class : a;
 //物件本身置中
 .box-lg {
     @include center(400px);
+    @include m(){
+         width: 100px;
+    }
     background-color: #eaff00;
 }
 
@@ -248,24 +236,40 @@ $class : a;
     @include center-flex();
 }
 
-@mixin layout($w) {
-    @if $w == 100 {
-        width: 100%;
-    }
 
-    @else if  $w <= 99{
-        width: $w + '%';
-        margin: auto;
-    }@else {
-       width: $w + 'px';
-       margin: auto;
-    }
-}
 
 //如果今天要給90%寬度時 要如何設計這個mixin
 
 
 .wrapper {
-  @include layout(90);
-  background-color: #d6d6d6;
+    @include layout(1200);
+    background-color: #d6d6d6;
+    //手機板
+    @include m(){
+      @include layout(90);
+      background-color: #ffabab;
+
+    }
+    
 }
+
+@mixin aa() {
+    .aa {
+        width: 100px;
+        @content;
+    }
+}
+
+
+@include aa() {
+    background-color: #fff;
+    color: #333;
+}
+
+
+
+
+
+
+
+

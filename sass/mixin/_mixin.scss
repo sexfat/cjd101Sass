@@ -5,3 +5,59 @@
     justify-content: center;
     align-items: center;
 }
+
+
+ // rwd 手機
+
+@mixin m() {
+    @media screen and (max-width:$device-m) {
+        @content;
+    }
+}
+
+
+// rwd 桌機
+@mixin d(){
+    @media screen and (min-width: $device-d) {
+        @content;
+    }
+}
+
+
+@mixin layout($w) {
+    @if $w==100 {
+        width: 100%;
+    }
+
+    @else if $w <=99 {
+        width: $w * 1%;
+        margin: auto;
+    }
+
+    @else {
+        width: $w * 1px;
+        margin: auto;
+    }
+}
+
+
+
+//置中
+@mixin center($w, $h:100px) {
+    margin: auto;
+    width: $w;
+    height: $h;
+}
+
+// flex置中
+@mixin center-flex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// 變數值
+@mixin rect($w, $h:null) {
+    width: $w;
+    height: $h
+}

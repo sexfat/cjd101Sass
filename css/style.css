@@ -113,6 +113,11 @@ body {
   height: 100px;
   background-color: #eaff00;
 }
+@media screen and (max-width: 768px) {
+  .box-lg {
+    width: 100px;
+  }
+}
 
 .section01 {
   display: flex;
@@ -121,7 +126,20 @@ body {
 }
 
 .wrapper {
-  width: "90%";
+  width: 1200px;
   margin: auto;
   background-color: #d6d6d6;
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 90%;
+    margin: auto;
+    background-color: #ffabab;
+  }
+}
+
+.aa {
+  width: 100px;
+  background-color: #fff;
+  color: #333;
 }/*# sourceMappingURL=style.css.map */
