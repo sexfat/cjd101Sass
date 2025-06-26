@@ -26,4 +26,28 @@ body {
 
 .box {
   height: 100px;
+}
+
+.wrapper {
+  width: 100%;
+}
+.wrapper header {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper header .logo {
+  width: 60px;
+  height: 40px;
+  background-color: #0095ff;
+}
+.wrapper header nav ul {
+  display: flex;
+}
+.wrapper header nav ul li {
+  width: 80px;
+  padding: 30px;
+  background-color: #a4a4a4;
 }/*# sourceMappingURL=style.css.map */
