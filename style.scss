@@ -27,6 +27,8 @@ body {
     font-family: $fontFamily;
     margin: $spacing;
     font-weight: $fontWeight;
+    padding: 0;
+    margin: 0;
 
     @if $dark {
         background-color: #333;
@@ -220,17 +222,18 @@ $class : a;
     width: $w;
     height: $h;
 }
+
 // flex置中
-@mixin center-flex(){
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@mixin center-flex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 // 物件
 .box-basic {
- @include rect(300px, 200px);
- background-color: #59f6d7;
+    @include rect(300px, 200px);
+    background-color: #59f6d7;
 }
 
 //物件本身置中
@@ -242,5 +245,22 @@ $class : a;
 
 //外容器針對內物件 置中
 .section01 {
-   @include center-flex();
+    @include center-flex();
+}
+
+@mixin layout($w) {
+    @if $w == 100 {
+        width: 100%;
+    }
+
+    @else {
+        width: $w + px;
+        margin: auto;
+    }
+}
+
+
+.wrapper {
+  @include layout(900);
+  background-color: #d6d6d6;
 }
