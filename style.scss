@@ -167,47 +167,76 @@ $class : a;
 
 
 
-    @if $basiccolor=='primary' {
-        .primary {
-            color: #003cff
-        }
+@if $basiccolor=='primary' {
+    .primary {
+        color: #003cff
+    }
+}
+
+@else if $basiccolor=='secondary' {
+    .secondary {
+        color: #ff6f00
     }
 
-    @else if $basiccolor=='secondary' {
-        .secondary {
-            color: #ff6f00
-        }
+}
 
-    }@else if $basiccolor=='error' {
-            .error {
-                color: red;
-            }
-        }
+@else if $basiccolor=='error' {
+    .error {
+        color: red;
+    }
+}
 
 
 // 宣告
-@mixin name(){
-  width: 100px;
-  height: 100px;
-}        
+@mixin name() {
+    width: 100px;
+    height: 100px;
+}
 
 //引用
 .rect {
- @include name()  
+    @include name()
 }
 
 .circle {
-  @include name()
+    @include name()
 }
 
 // 變數值
-@mixin rect($w , $h:null){
- width: $w;
- height: $h
+@mixin rect($w, $h:null) {
+    width: $w;
+    height: $h
 }
 
 // 變數
 .box {
- @include rect(200px , 200px);
+    @include rect(200px, 200px);
 }
 
+
+//置中
+@mixin center($w, $h:100px) {
+    margin: auto;
+    width: $w;
+    height: $h;
+}
+// flex置中
+@mixin center-flex(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-basic {
+ @include rect(300px, 200px);
+ background-color: #59f6d7;
+}
+
+.box-lg {
+    @include center(400px);
+    background-color: #eaff00;
+}
+
+.section01 {
+   @include center-flex();
+}

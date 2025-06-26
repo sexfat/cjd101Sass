@@ -97,4 +97,23 @@ body {
 .box {
   width: 200px;
   height: 200px;
+}
+
+.box-basic {
+  width: 300px;
+  height: 200px;
+  background-color: #59f6d7;
+}
+
+.box-lg {
+  margin: auto;
+  width: 400px;
+  height: 100px;
+  background-color: #eaff00;
+}
+
+.section01 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */
