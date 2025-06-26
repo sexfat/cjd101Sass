@@ -4,182 +4,18 @@
 @import 'sass/setting/var';
 @import 'sass/setting/font';
 @import 'sass/setting/color';
+@import 'sass/setting/border_radius';
+
 
 //function
 @import 'sass/mixin/mixin';
 
-// component
 
 // layout
+@import 'sass/layout/layout';
+
+// component
 
 // page
 
 // plugin
-
-
-
-
-
-body {
-    font-size: $fontSize;
-    color: $color;
-    line-height: 1.4;
-    font-family: $fontFamily;
-    margin: $spacing;
-    font-weight: $fontWeight;
-
-    @if $dark {
-        background-color: #333;
-    }
-
-}
-
-//區域變數 vs全域變數
-.wrapper {
-    $a: 20px; //  區域變數
-    background-color: map-get($themeStyle, lightenColor); //map範例
-    font-size: $a;
-}
-
-// .content {
-//     // font-size: $a; // 這取不到區域變數
-// }
-
-
-
-
-.b {
-    width: $b;
-}
-
-// 變數轉型
-$class : a;
-
-// class
-.#{$class} {
-    width: $b;
-}
-
-
-
-.img {
-    background-image: url('img/#{$imgUrl}.jpg');
-}
-
-
-
-.box {
-    #{$be}: 100px
-}
-
-
-// nesting 
-
-.wrapper {
-    width: 100%;
-
-    header {
-        width: 1200px;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #e0e0e0;
-
-        .logo {
-            width: 60px;
-            height: 40px;
-            background-color: #0095ff;
-        }
-
-        nav {
-            ul {
-                display: flex;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-
-                li {
-                    width: 80px;
-                    padding: 10px;
-                    text-align: center;
-                    background-color: #a4a4a4;
-
-                    a {
-                        color: blueviolet;
-                        display: block;
-                        text-decoration: none;
-
-                        &:hover {
-                            color: blue
-                        }
-
-                        //偽元素
-                        &::before {
-                            content: '';
-                        }
-                    }
-
-                    // a:hover {
-                    //     color :blue 
-                    // }   
-                }
-
-            }
-
-        }
-    }
-}
-
-// .wrapper header
-
-
-//運算 (單位 / 小數點)
-
-.el {
-    width: 10 + 10px;
-    height: 10px - 20px;
-    margin: 10px * 10;
-    font: ceil(20 / 16) + px; // 無條件進位
-    //  font : round(20 / 16) + px;四捨五入
-    //  font : floor(20 / 16) + px; //無條件捨去
-}
-
-//判斷式
-
-
-
-.layout {
-    @if $w==full {
-        width: 100%;
-    }
-
-    @else {
-        width: $w;
-        margin: auto;
-    }
-}
-
-
-
-
-//function 
-
-
-
-    @if $basiccolor=='primary' {
-        .primary {
-            color: #003cff
-        }
-    }
-
-    @else if $basiccolor=='secondary' {
-        .secondary {
-            color: #ff6f00
-        }
-
-    }@else if $basiccolor=='error' {
-            .error {
-                color: red;
-            }
-        }

@@ -1,4 +1,3 @@
-// 變數型態
 $fontSize : 16px; // 數值
 $fontFamily : 'Gill Sans',
 'Gill Sans MT',
@@ -16,18 +15,17 @@ $themeStyle : (defaultColor : #eee,
 
 $fontWeight : null; // 空值
 
-
-//權重
 $b : 300px;
 $b : 400px !default; //預設值
 
-// url
+$class : a;
+
 $imgUrl : banner;
 
-// 屬性
 $be : height;
 
-// @if @else @else if
 $w : 1200px;
 
-$basiccolor : error;
+$basiccolor: 'primary';
+
+$bv : 4px;
