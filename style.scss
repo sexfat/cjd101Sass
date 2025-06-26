@@ -253,14 +253,19 @@ $class : a;
         width: 100%;
     }
 
-    @else {
-        width: $w + px;
+    @else if  $w <= 99{
+        width: $w + '%';
         margin: auto;
+    }@else {
+       width: $w + 'px';
+       margin: auto;
     }
 }
 
+//如果今天要給90%寬度時 要如何設計這個mixin
+
 
 .wrapper {
-  @include layout(900);
+  @include layout(90);
   background-color: #d6d6d6;
 }
