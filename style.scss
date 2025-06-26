@@ -138,3 +138,18 @@ $be : height;
 //  font : round(20 / 16) + px;四捨五入
 //  font : floor(20 / 16) + px; //無條件捨去
 }
+
+//判斷式
+
+// @if @else @else if
+$w : 1200px;
+
+.layout {
+ @if $w == full {
+    width: 100%;
+ }@else {
+    width: $w;
+    margin: auto;
+ }
+}
+

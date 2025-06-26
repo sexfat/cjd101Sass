@@ -73,4 +73,9 @@ body {
   height: -10px;
   margin: 100px;
   font: 2px;
+}
+
+.layout {
+  width: 1200px;
+  margin: auto;
 }/*# sourceMappingURL=style.css.map */
