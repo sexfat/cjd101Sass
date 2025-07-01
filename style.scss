@@ -214,6 +214,25 @@ $class : a;
 
 
 
+@for $i from 5 through 100 {
+  .spacing-#{$i} {
+    margin-bottom: $i * 1px;
+  }
+}
+
+
+@for $i from 5 through 100 {
+  .push-left-#{$i} {
+     position: relative;
+     left: $i * 1px;
+  }
+}
+
+
+
+
+
+
 
 
 
