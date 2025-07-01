@@ -1,0 +1,55 @@
+.wrapper {
+    width: 100%;
+
+    header {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #e0e0e0;
+
+        .logo {
+            width: 60px;
+            height: 40px;
+            background-color: #0095ff;
+        }
+
+        nav {
+            ul {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    width: 80px;
+                    padding: 10px;
+                    text-align: center;
+                    background-color: #a4a4a4;
+
+                    a {
+                        color: blueviolet;
+                        display: block;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: blue
+                        }
+
+                        //偽元素
+                        &::before {
+                            content: '';
+                        }
+                    }
+
+                    // a:hover {
+                    //     color :blue 
+                    // }   
+                }
+
+            }
+
+        }
+    }
+}
