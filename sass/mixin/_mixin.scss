@@ -110,13 +110,9 @@
 
 @mixin Bgcolor($class , $bgcolor) {
     @for $i from 1 through 10 {
-        .#{$class}Bg-#{$i} {
-            width: 200px;
-            height: 30px;
+        .#{$class}-#{$i} {
             background-color: lighten($bgcolor, $i * 6.5);
         }
     }
 }
 
-@include Bgcolor(primary, #3B0783);
-@include Bgcolor(neutral, #878c00);
