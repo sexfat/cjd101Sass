@@ -1,0 +1,33 @@
+// .btn {
+//     font-size: 16px;
+//     padding: 6px 25px;
+//     background-color: #0080ff;
+//     color: #fff;
+//     text-align: center;
+//     border: 1px solid #0048d9;
+//     border-radius: 4px;
+//     cursor: pointer;
+//     transition: .3s all ease;
+
+//     &:hover {
+//         background-color: #56aaff;
+//     }
+// }
+
+@mixin btn($size ,  $bgc) {
+    .btn {
+        font-size: 16px;
+        padding: $size  $size*4;
+        background-color: $bgc;
+        color: #fff;
+        text-align: center;
+        border: 1px solid  darken($bgc, 10);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: .3s all ease;
+
+        &:hover {
+            background-color: lighten($bgc, 20);
+        }
+    }
+}
