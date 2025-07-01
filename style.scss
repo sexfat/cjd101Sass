@@ -168,9 +168,11 @@ $class : a;
 //物件本身置中
 .box-lg {
     @include center(400px);
-    @include m(){
-         width: 100px;
+
+    @include m() {
+        width: 100px;
     }
+
     background-color: #eaff00;
 }
 
@@ -188,13 +190,14 @@ $class : a;
 .wrapper {
     @include layout(1200);
     background-color: #d6d6d6;
+
     //手機板
-    @include m(){
-      @include layout(90);
-      background-color: #ffabab;
+    @include m() {
+        @include layout(90);
+        background-color: #ffabab;
 
     }
-    
+
 }
 
 @mixin aa() {
@@ -210,29 +213,6 @@ $class : a;
     color: #333;
 }
 
-
-
-
-
-@for $i from 5 through 100 {
-  .spacing-#{$i} {
-    margin-bottom: $i * 1px;
-  }
-}
-
-
-@for $i from 5 through 100 {
-  .push-left-#{$i} {
-     position: relative;
-     left: $i * 1px;
-  }
-}
-
-
-
-
-
-
-
-
+@include spacing(100);
+@include push(100);
 

@@ -7,7 +7,7 @@
 }
 
 
- // rwd 手機
+// rwd 手機
 
 @mixin m() {
     @media screen and (max-width:$device-m) {
@@ -17,7 +17,7 @@
 
 
 // rwd 桌機
-@mixin d(){
+@mixin d() {
     @media screen and (min-width: $device-d) {
         @content;
     }
@@ -62,13 +62,61 @@
     height: $h
 }
 
-
+// 圓角
 @mixin borderRadius($size) {
-  @if $size == large{  
-   border-radius:30px;
-  }@else if $size  == medium {
-    border-radius: 15px;
-  }@else if $size == small {
-    border-radius: 5px;
-  }
+    @if $size==large {
+        border-radius: 30px;
+    }
+
+    @else if $size==medium {
+        border-radius: 15px;
+    }
+
+    @else if $size==small {
+        border-radius: 5px;
+    }
 }
+
+
+// 推空間距離
+@mixin spacing($var) {
+    @for $i from 5 through $var {
+        .spacing-#{$i} {
+            margin-bottom: $i * 1px;
+        }
+    }
+}
+
+
+//推元件距離
+@mixin push($var) {
+    @for $i from 5 through $var {
+        .pl-#{$i} {
+            position: relative;
+            left: $i * 1px;
+        }
+
+        .pr-#{$i} {
+            position: relative;
+            right: $i * 1px;
+        }
+    }
+}
+
+
+
+//design system Color
+
+
+@mixin Bgcolor($class , $bgcolor) {
+    @for $i from 1 through 10 {
+        .#{$class}Bg-#{$i} {
+            width: 200px;
+            height: 30px;
+            background-color: lighten($bgcolor, $i * 6.5);
+        }
+    }
+}
+
+@include Bgcolor(primary, #3B0783);
+@include Bgcolor(neutral, #878c00);
