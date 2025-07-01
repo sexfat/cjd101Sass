@@ -62,3 +62,13 @@
     height: $h
 }
 
+
+@mixin borderRadius($size) {
+  @if $size == large{  
+   border-radius:30px;
+  }@else if $size  == medium {
+    border-radius: 15px;
+  }@else if $size == small {
+    border-radius: 5px;
+  }
+}

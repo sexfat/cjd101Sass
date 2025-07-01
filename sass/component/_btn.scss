@@ -14,7 +14,7 @@
 //     }
 // }
 
-@mixin btn($class, $size, $bgc, $border:false ,$borderRadius : null ) {
+@mixin btn($class, $size, $bgc ,$border:null , $style: medium) {
     .btn-#{$class} {
         font-size: 16px;
         padding: $size $size*4;
@@ -28,11 +28,9 @@
             background-color: $bgc;
             border: 1px solid darken($bgc, 10);
         }
-        @if $borderRadius == large { 
-           border-radius: 24px;
-        }@else{
-           border-radius: 6px; 
-        }
+
+        //borderRadius
+        // @include borderRadius($style);   
 
         text-align: center;
         color: #fff;
