@@ -108,7 +108,7 @@
 //design system Color
 
 
-@mixin Bgcolor($class , $bgcolor) {
+@mixin Bgcolor($class, $bgcolor) {
     @for $i from 1 through 10 {
         .#{$class}-#{$i} {
             background-color: lighten($bgcolor, $i * 6.5);
@@ -117,12 +117,61 @@
 }
 
 
-@each $i in 400 500 600 700 800 thin{
-   .title-#{$i} {
-      font-weight: $i ;
-   }
+//字體 
+//說明==================
+// @include fontWeight(100 200 300 400)
+//.title {font-weight:  100 200 300 ...}
+@mixin fontWeight($w) {
+    @each $i in $w {
+        .title-#{$i} {
+            font-weight: $i;
+        }
+    }
 }
 
+
+// slider輪播圖
+@mixin slider($url) {
+    @each $i in $url {
+        .slider-#{$i} {
+            background-image: url('img/#{$i}.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+}
+
+// 以上都是list
+
+
+// 以下map 
+
+$map : (
+  key : val,
+  key2 : val2
+);
+
+
+//標題字
+$headfont : (
+ h1 : 96px,
+ h2 : 60px,
+ h3 : 48px,
+ h4 : 34px,
+ h5 : 24px,
+ h6 : 18px,
+ body : 16px,
+ span  : 12px
+); 
+
+
+// h1 {font-size: map-get($headfont, h3);}
+
+@each $k , $v in $headfont {
+ #{$k} {
+   font-size: $v;
+ }
+} 
 
 
 
