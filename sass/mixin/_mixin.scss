@@ -116,3 +116,13 @@
     }
 }
 
+
+@each $i in 400 500 600 700 800 thin{
+   .title-#{$i} {
+      font-weight: $i ;
+   }
+}
+
+
+
+
