@@ -148,40 +148,55 @@
 
 // 以下map 
 
-$map : (
-  key : val,
-  key2 : val2
-);
+$map : (key : val,
+    key2 : val2);
 
 
 //標題字
 $headfont : (
- h1 : 96px,
- h2 : 60px,
- h3 : 48px,
- h4 : 34px,
- h5 : 24px,
- h6 : 18px,
- body : 16px,
- span  : 12px
-); 
+    h1 : 96px,
+    h2 : 60px,
+    h3 : 48px,
+    h4 : 34px,
+    h5 : 24px,
+    h6 : 18px,
+    body : 16px,
+    span : 12px);
 
 
 // h1 {font-size: map-get($headfont, h3);}
-
-@each $k , $v in $headfont {
- #{$k} {
-   font-size: $v;
+//結合響應式
+@each $k,$v in $headfont {
+    #{$k} {
+        font-size: $v;
+    }
+    @include m(){
+        #{$k} {
+               font-size: round($v / 1.5);
+      }; 
+    }
  }
-} 
+
+@mixin head($headfont){
+   @each $k,$v in $headfont {
+      #{$k} {
+        font-size: $v;
+      }
+        @include m(){
+           #{$k} {
+               font-size: round($v / 1.5);
+      }; 
+        }
+       
+ }
+}
 
 
 $colorbg : (
-   primary : #6d003e,
-   secondary : #426600,
-   error: rgb(137, 82, 0),
-   success : #050069
-);
+    primary : #6d003e,
+    secondary : #426600,
+    error: rgb(137, 82, 0),
+    success : #050069);
 
 
 // @each $k , $v in $colorbg {
@@ -191,13 +206,13 @@ $colorbg : (
 // }
 
 
-@each $k , $v in $colorbg {
-  @include Bgcolor($k, $v)
+@each $k,
+$v in $colorbg {
+    @include Bgcolor($k, $v)
 }
 
-
-
-
-
-
-
+@mixin colors($colorbg) {
+    @each $k,$v in $colorbg {
+        @include Bgcolor($k, $v)
+    }
+}
