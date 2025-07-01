@@ -14,18 +14,25 @@
 //     }
 // }
 
-@mixin btn($size ,  $bgc) {
-    .btn {
+@mixin btn($class, $size, $bgc, $border:false) {
+    .btn-#{$class} {
         font-size: 16px;
-        padding: $size  $size*4;
-        background-color: $bgc;
-        color: #fff;
+        padding: $size $size*4;
+        //判斷外框形式的按鈕
+        @if $border {
+            border: 1px solid $bgc;
+            background-color: initial;
+             color: $bgc !important;
+        }
+        @else {
+            background-color: $bgc;
+            border: 1px solid darken($bgc, 10);
+        }
+        border-radius: 6px;
         text-align: center;
-        border: 1px solid  darken($bgc, 10);
-        border-radius: 4px;
+        color: #fff;
         cursor: pointer;
         transition: .3s all ease;
-
         &:hover {
             background-color: lighten($bgc, 20);
         }
